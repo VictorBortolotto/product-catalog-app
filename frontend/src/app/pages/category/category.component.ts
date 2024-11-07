@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
-import { Category } from '../../model/Category.model';
 import { CategoryService } from '../../service/category/category.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common'; 
@@ -7,6 +6,7 @@ import { ToastService } from '../../service/toast/toast.service';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { Category } from '../../model/Category.model';
 
 @Component({
   selector: 'app-category',
