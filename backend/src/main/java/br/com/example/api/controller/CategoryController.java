@@ -1,6 +1,8 @@
 package br.com.example.api.controller;
 
 import br.com.example.api.model.Category;
+import br.com.example.api.model.Product;
+import br.com.example.api.model.ProductCategory;
 import br.com.example.api.services.CategoryService;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,5 +41,20 @@ public class CategoryController {
     @GetMapping
     public List<Category> findAll() {
         return categoryService.findAll();
+    }
+
+    @PostMapping(path = "/product")
+    public void addProductToCategory(@RequestBody ProductCategory productCategory) {
+        categoryService.addProductToCategory(productCategory.getProduct().getId(), productCategory.getCategory().getId());
+    }
+
+    @GetMapping(path = "/{id}/products")
+    public List<Product> getProductsByCategoryId(@PathVariable("id") long id) {
+        return categoryService.getProductsByCategoryId(id);
+    }
+
+    @DeleteMapping(path = "/{categoryId}/product/{productId}")
+    void deleteByCategoryIdAndProductId(@PathVariable("categoryId") long categotyId, @PathVariable("productId") long productId) {
+        categoryService.deleteByCategoryIdAndProductId(categotyId, productId);
     }
 }

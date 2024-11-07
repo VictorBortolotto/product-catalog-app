@@ -1,5 +1,6 @@
 package br.com.example.api.controller;
 
+import br.com.example.api.model.Category;
 import br.com.example.api.model.Product;
 import br.com.example.api.services.ProductService;
 import org.springframework.web.bind.annotation.*;
@@ -39,5 +40,10 @@ public class ProductController {
     @GetMapping
     public List<Product> findAll() {
         return productService.findAll();
+    }
+
+    @GetMapping(path = "/{id}/category")
+    public Category getCategoryByProductId(@PathVariable("id") long id) {
+        return productService.getCategoryByProductId(id);
     }
 }
