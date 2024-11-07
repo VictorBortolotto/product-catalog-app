@@ -3,7 +3,9 @@ package br.com.example.api.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "category")
@@ -17,6 +19,8 @@ public class Category {
     private String name;
     @Column
     private String description;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ProductCategory> productCategories = new HashSet<>();
 
     public Category() { }
 
@@ -55,12 +59,12 @@ public class Category {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-        return id == category.id && Objects.equals(name, category.name) && Objects.equals(description, category.description);
+        return id == category.id && Objects.equals(name, category.name) && Objects.equals(description, category.description) && Objects.equals(productCategories, category.productCategories);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description);
+        return Objects.hash(id, name, description, productCategories);
     }
 
     @Override
@@ -69,6 +73,7 @@ public class Category {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
+                ", productCategories=" + productCategories +
                 '}';
     }
 }
