@@ -2,6 +2,12 @@ create database product_db;
 
 use product_db;
 
+create table user(
+	id int primary key auto_increment,
+	email varchar(500) not null unique,
+	password varchar(500) not null
+);
+
 create table category(
 	id int primary key auto_increment,
     name varchar(500) not null,

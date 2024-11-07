@@ -2,11 +2,13 @@ package br.com.example.api.model;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
 @Table(name = "product_category")
-public class ProductCategory {
+public class ProductCategory implements Serializable {
+    private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
