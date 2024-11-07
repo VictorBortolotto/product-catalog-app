@@ -1,5 +1,6 @@
 package br.com.example.api.services;
 
+import br.com.example.api.model.Category;
 import br.com.example.api.model.Product;
 import br.com.example.api.repository.ProductRepository;
 import jakarta.persistence.EntityNotFoundException;
@@ -13,10 +14,12 @@ import java.util.List;
 public class ProductService {
 
     private ProductRepository productRepository;
+    private ProductCategoryService productCategoryService;
 
     @Autowired
-    public ProductService(ProductRepository productRepository) {
+    public ProductService(ProductRepository productRepository, ProductCategoryService productCategoryService) {
         this.productRepository = productRepository;
+        this.productCategoryService = productCategoryService;
     }
 
     public Product save(Product product) {
@@ -39,5 +42,9 @@ public class ProductService {
 
     public List<Product> findAll() {
         return productRepository.findAll();
+    }
+
+    public Category getCategoryByProductId(long productId) {
+        return productCategoryService.getCategoryByProductId(productId);
     }
 }

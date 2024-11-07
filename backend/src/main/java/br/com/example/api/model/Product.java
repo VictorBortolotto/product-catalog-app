@@ -3,7 +3,9 @@ package br.com.example.api.model;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "product")
@@ -19,6 +21,8 @@ public class Product implements Serializable {
     private String description;
     @Column
     private double price;
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<ProductCategory> productCategories = new HashSet<>();
 
     public Product() {}
 
@@ -61,26 +65,36 @@ public class Product implements Serializable {
         this.price = price;
     }
 
+    public Set<ProductCategory> getProductCategories() {
+        return productCategories;
+    }
+
+    public void setProductCategories(Set<ProductCategory> productCategories) {
+        this.productCategories = productCategories;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Product product = (Product) o;
-        return id == product.id && Double.compare(price, product.price) == 0 && Objects.equals(name, product.name) && Objects.equals(description, product.description);
+        return id == product.id && Double.compare(price, product.price) == 0 && Objects.equals(name, product.name) && Objects.equals(description, product.description) && Objects.equals(productCategories, product.productCategories);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, description, price);
+        return Objects.hash(id, name, description, price, productCategories);
     }
 
     @Override
-    public String toString() {
+    public String
+    toString() {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
+                ", productCategories=" + productCategories +
                 '}';
     }
 }
