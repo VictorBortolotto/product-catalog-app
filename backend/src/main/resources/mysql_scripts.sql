@@ -9,9 +9,9 @@ create table category(
 );
 
 create table product_category(
+	id int primary key auto_increment,
 	category_id int,
-    product_id int,
-    primary key (category_id, product_id)
+    product_id int
 );
 
 create table product(
@@ -21,5 +21,5 @@ create table product(
     price decimal(10, 2) not null
 );
 
-alter table product_category add constraint pk_category_product_category foreign key (category_id) references category(id);
-alter table product_category add constraint pk_product_product_category foreign key (product_id) references product(id);
+alter table product_category add constraint fk_category_product_category foreign key (category_id) references category(id) on delete cascade;
+alter table product_category add constraint fk_product_product_category foreign key (product_id) references product(id) on delete cascade;
