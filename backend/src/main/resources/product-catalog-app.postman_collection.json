@@ -24,15 +24,14 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8080/product/new",
+							"raw": "http://localhost:8080/product",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"product",
-								"new"
+								"product"
 							]
 						}
 					},
@@ -125,6 +124,14 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "get-category-by-product-id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
 				}
 			]
 		},
@@ -203,16 +210,24 @@
 					"request": {
 						"method": "PUT",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"name\": \"Teste Categoria 1\",\r\n    \"description\": \"Teste 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://localhost:8080/category/1",
+							"raw": "http://localhost:8080/category",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8080",
 							"path": [
-								"category",
-								"1"
+								"category"
 							]
 						}
 					},
@@ -233,6 +248,45 @@
 							"path": [
 								"category",
 								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-product-to-category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-products-by-category-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/category/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"category",
+								"2"
 							]
 						}
 					},
