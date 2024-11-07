@@ -73,15 +73,10 @@
 
 <p>Dentro da pasta resources do projeto backend tem a collection do Postman utilizada para testar os endpoints da aplicação</p>
 
-<h2 align="center">Author</h2>
+<h2 align="start">Autor</h2>
 
-<a href="https://www.linkedin.com/in/victor-augusto-campos-bortolotto/">
-<img style="border-radius: 50%;" src="https://media-exp1.licdn.com/dms/image/C4D03AQFt3YYTxPs9hQ/profile-displayphoto-shrink_200_200/0/1614791853272?e=1634169600&v=beta&t=cZy1JLDfzlCKbTfWEs_wBrgLA4dl239CWbThcU7bGKA" width="100px;" alt=""/>
-</a>
-</br>
-<a href="https://www.linkedin.com/in/victor-augusto-campos-bortolotto/">
-Victor Augusto Campos Bortolotto
-</a>
+<h2 style="border: none">Victor Augusto Campos Bortolotto</h2>
+<img style="width: 100px; height: 100px" src="https://avatars.githubusercontent.com/u/50971139?v=4" alt=""/>
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/victor-augusto-campos-bortolotto/)](https://www.linkedin.com/in/victor-augusto-campos-bortolotto/) 
 [![Gmail Badge](https://img.shields.io/badge/-victorcamposbortolottowork@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:victorcamposbortolottowork@gmail.com)](mailto:victorcamposbortolottowork@gmail.com)
