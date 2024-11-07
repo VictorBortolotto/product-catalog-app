@@ -1,0 +1,20 @@
+<div class="d-flex w-100 h-75 align-items-center justify-content-center">
+  <div class="container p-3 w-75 h-100 rounded bg-white">
+    <form [formGroup]="form" class="form d-flex gap-3 flex-column w-100 h-100 bg-white justify-content-center" (ngSubmit)="onSubmit()">
+      <label class="label w-100">Name</label>
+      <input formControlName="name" type="text" class="input w-100" placeholder="Name">
+      <label class="label w-100">Description</label>
+      <textarea maxlength="1500" formControlName="description" class="description d-flex w-100 h-25 rounded p-2" placeholder="Product Description"></textarea>
+      <div class="d-flex flex-row h-25 w-100 align-items-start justify-content-start">
+        <div class="d-flex flex-column gap-3 w-50 justify-content-start align-items-start">
+          <label class="label w-100" >Price</label>
+          <input formControlName="price" type="number" class="input w-50" placeholder="0.0">
+        </div>
+        <div class="d-flex w-50 h-100 align-items-center justify-content-end">
+          <button class="save" type="submit">Save Product</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <ng-container #toastContainer></ng-container>
+</div>

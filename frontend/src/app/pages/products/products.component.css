@@ -1,0 +1,96 @@
+.main {
+  height: 88%;
+}
+
+.card-container {
+  max-height: 100%;
+  overflow-y: auto;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  height: 10%;
+}
+
+.card-container::-webkit-scrollbar {
+  width: 0px; 
+  height: 0px;
+}
+
+.id {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 55%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 10%;
+  height: 100%;
+  font-size: 30px;
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
+.edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 5%;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
+.fab {
+  display: flex;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  height: 80px;
+  background-color: rgb(161, 161, 238);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 35px;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+}
+
+.fab:hover {
+  background-color: rgb(170, 170, 236);
+}

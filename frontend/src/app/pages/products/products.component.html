@@ -1,0 +1,20 @@
+<div class="main d-flex w-100 align-items-center justify-content-center">
+  <div class="card-container d-flex flex-column gap-2 w-75 h-100 p-4">
+    <div class="card d-flex flex-row w-100">
+      <p class="id">ID</p>
+      <p class="name">Name</p>
+      <p class="description">Description</p>
+      <p class="price">Price</p>
+    </div>
+    <div class="card d-flex flex-row w-100" *ngFor="let product of products">
+      <p class="id">{{ product.id }}</p>
+      <p class="name">{{ product.name }}</p>
+      <p class="description">{{ product.description }}</p>
+      <p class="price">{{ product.price }}</p>
+      <button class="delete" (click)="onClickDelete(product)"><i class="bi bi-trash-fill" style="font-size:24px; color: rgb(250, 105, 105);"></i></button>
+      <button class="edit" (click)="onClickEdit(product)"><i class="bi bi-pencil-fill" style="font-size:24px; color: rgb(108, 108, 240);"></i></button>
+    </div>
+    <button class="fab" (click)="onFabClick()"><i class="bi bi-plus-lg"></i></button>
+  </div>
+  <ng-container #toastContainer></ng-container>
+</div>
