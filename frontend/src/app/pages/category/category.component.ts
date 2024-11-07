@@ -56,7 +56,8 @@ export class CategoryComponent implements OnInit {
       next: () => {
         this.router.navigate(['/categories'])
       },
-      error: () => {
+      error: (error) => {
+        if (error.status === 401) this.router.navigate(['/login']);
         this.toastService.showToast("Failed to save the category. Please try again.", "red")
       }
     });
@@ -71,7 +72,8 @@ export class CategoryComponent implements OnInit {
       next: () => {
         this.router.navigate(['/categories'])
       },
-      error: () => {
+      error: (error) => {
+        if (error.status === 401) this.router.navigate(['/login']);
         this.toastService.showToast("Failed to save the category. Please try again.", "red")
       }
     });

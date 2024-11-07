@@ -27,7 +27,8 @@ export class ProductsComponent {
       next: (response) => {
         this.products = response
       },
-      error: () => {
+      error: (error) => {
+        if (error.status === 401) this.router.navigate(['/login']);
         this.toastService.showToast("Failed to retrieve the products. Please try again.", "red")
       }
     });

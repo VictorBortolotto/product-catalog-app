@@ -5,6 +5,7 @@ import { CategoryService } from '../../service/category/category.service';
 import { ProductService } from '../../service/product/product.service';
 import { Category } from '../../model/Category.model';
 import { ToastService } from '../../service/toast/toast.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal',
@@ -19,7 +20,7 @@ export class ModalComponent implements OnInit {
   isVisible: boolean = false;
   isProductsView: boolean = true;
 
-  constructor(private httpCategory: CategoryService, private httpProduct: ProductService, private toastService: ToastService) {}
+  constructor(private httpCategory: CategoryService, private httpProduct: ProductService, private toastService: ToastService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -39,7 +40,8 @@ export class ModalComponent implements OnInit {
       next: (data) => {
         this.products = data;
       },
-      error: (err) => {
+      error: (error) => {
+        if (error.status === 401) this.router.navigate(['/login']);
         this.toastService.showToast("Failed to retrieve the products. Please try again.", "red")
       }
     });

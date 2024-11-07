@@ -55,7 +55,8 @@ export class ProductComponent {
       next: () => {
         this.router.navigate(['/products'])
       },
-      error: () => {
+      error: (error) => {
+        if (error.status === 401) this.router.navigate(['/login']);
         this.toastService.showToast("Failed to save the product. Please try again.", "red")
       }
     });
@@ -71,7 +72,8 @@ export class ProductComponent {
       next: () => {
         this.router.navigate(['/products'])
       },
-      error: () => {
+      error: (error) => {
+        if (error.status === 401) this.router.navigate(['/login']);
         this.toastService.showToast("Failed to update the product. Please try again.", "red")
       }
     });
