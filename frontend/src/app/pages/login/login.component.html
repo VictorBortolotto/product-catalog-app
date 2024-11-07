@@ -1,10 +1,10 @@
 <div class="main d-flex w-100 align-items-center justify-content-center">
   <div class="w-25 h-100 rounded bg-white">
-    <form class="form d-flex gap-3 flex-column w-100 h-100 bg-white justify-content-center">
+    <form [formGroup]="form" class="form d-flex gap-3 flex-column w-100 h-100 bg-white justify-content-center" (ngSubmit)="login()">
       <label class="label">Email</label>
-      <input type="text" class="input" placeholder="Ex.: myemail@gmail.com">
+      <input type="text" formControlName="email" class="input" placeholder="Ex.: myemail@gmail.com">
       <label class="label">Password</label>
-      <input type="password" class="input" placeholder="Password">
+      <input type="password" formControlName="password" class="input" placeholder="Password">
       <div class="d-flex column-gap-2">
         <input type="checkbox" class="checkbox" aria-label="teste">
         <label class="label">Remember me</label>
