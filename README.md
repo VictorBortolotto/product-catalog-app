@@ -37,7 +37,19 @@
   mvn clean install
 ```
 
-<h6><p>4 - Rodar o projeto</p></h6>
+<h6><p>4 - Criar e configurar o application.properties projeto</p></h6>
+
+```
+  spring.application.name=api
+  spring.datasource.url=jdbc:mysql://localhost:3306/product_db
+  spring.datasource.username=<database_user>
+  spring.datasource.password=<database_password>
+
+  auth.security.jwtSecret=<your_secret>
+  auth.security.jwtExpirationMs=<expire_in>
+```
+
+<h6><p>5 - Rodar o projeto</p></h6>
 
 ```
   mvn spring-boot:run
