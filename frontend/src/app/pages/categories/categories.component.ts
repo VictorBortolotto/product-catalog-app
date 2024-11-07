@@ -23,8 +23,14 @@ export class CategoriesComponent implements OnInit {
   constructor(private http: CategoryService, private fb: FormBuilder, private toastService: ToastService, private router: Router) {}
 
   ngOnInit(): void {
-    this.http.getAll().subscribe(response => {
-      this.categories = response
+    this.http.getAll().subscribe({
+      next: (response) => {
+        this.categories = response
+      },
+      error: (error) => {
+        if (error.status === 401) this.router.navigate(['/login']);
+      }
+      
     });
   }
   
@@ -40,6 +46,7 @@ export class CategoriesComponent implements OnInit {
     if (category.id) {
       this.http.delete(category.id).subscribe({
         next: () => {
+       
           this.categories = this.categories.filter(c => c.id !== category.id);
           this.toastService.showToast("Category deleted successfully!", "green")
         },
