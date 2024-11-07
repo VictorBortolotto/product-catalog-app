@@ -71,7 +71,7 @@
 
 ## INFORMAÇÕES 
 
-<p>Dentro da pasta resources do projeto backend tem a collection do Postman utilizada para testar os endpoints da aplicação</p>
+<p>Dentro da pasta resources do projeto backend tem a collection JSON do Postman utilizada para testar os endpoints da aplicação, bastando apenas importa-la no postman novamente.</p>
 
 <h2 align="start">Autor</h2>
 
