@@ -1,0 +1,25 @@
+<div class="modal-overlay" *ngIf="isVisible" (click)="close()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="content gap-2">
+      <div class="card d-flex flex-row w-100">
+        <p class="id">ID</p>
+        <p class="name">Name</p>
+        <p class="description">Description</p>
+        <p class="price">Price</p>
+      </div>
+      <div class="card d-flex flex-row w-100" *ngFor="let product of products">
+        <p class="id">{{ product.id }}</p>
+        <p class="name">{{ product.name }}</p>
+        <p class="description">{{ product.description }}</p>
+        <p class="price">{{ product.price }}</p>
+        <button class="add" (click)="addProductToCategory(product)" *ngIf="isProductsView"><i class="bi bi-plus" style="font-size: 40px; color: green;"></i></button>
+        <button class="remove" (click)="removeProductFromCategory(product)" *ngIf="!isProductsView"><i class="bi bi-trash-fill" style="font-size:24px; color: rgb(250, 105, 105);"></i></button>
+      </div>
+    </div>
+    <div class="footer gap-2">
+      <button class="products" (click)="loadProducts()">Products</button>
+      <button class="products-category" (click)="loadProductsInCategory()">Products in Category</button>
+      <button class="close" (click)="close()">Close</button>
+    </div>
+  </div>
+</div>
