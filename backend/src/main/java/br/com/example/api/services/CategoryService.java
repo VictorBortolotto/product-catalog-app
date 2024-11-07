@@ -1,6 +1,7 @@
 package br.com.example.api.services;
 
 import br.com.example.api.model.Category;
+import br.com.example.api.model.Product;
 import br.com.example.api.repository.CategoryRepository;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,12 @@ import java.util.List;
 public class CategoryService {
 
     private CategoryRepository categoryRepository;
+    private ProductCategoryService productCategoryService;
 
     @Autowired
-    public CategoryService(CategoryRepository categoryRepository) {
+    public CategoryService(CategoryRepository categoryRepository, ProductCategoryService productCategoryService) {
         this.categoryRepository = categoryRepository;
+        this.productCategoryService = productCategoryService;
     }
 
     public Category save(Category category) {
@@ -38,5 +41,17 @@ public class CategoryService {
 
     public List<Category> findAll() {
         return categoryRepository.findAll();
+    }
+
+    public void addProductToCategory(long productId, long categoryId) {
+        productCategoryService.addProductToCategory(productId, categoryId);
+    }
+
+    public List<Product> getProductsByCategoryId(long categoryId) {
+        return productCategoryService.getProductsByCategoryId(categoryId);
+    }
+
+    public void deleteByCategoryIdAndProductId(long categoryId, long productId) {
+        productCategoryService.deleteByCategoryIdAndProductId(categoryId, productId);
     }
 }
