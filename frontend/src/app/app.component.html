@@ -1,0 +1,14 @@
+
+<header class="header d-flex w-100 align-items-center p-3">
+  <button class="btn-menu d-flex h-50 align-items-center justify-content-center" (click)="toggleSidebar()"><i class="bi bi-list" style="font-size:24px; color: white;"></i></button>
+</header>
+<div class="app-container" [class.show-sidebar]="isSidebarVisible">
+  <aside class="sidebar" *ngIf="isSidebarVisible">
+    <button class="sidebar-button" (click)="toggleSidebar()"><i class="bi bi-x" style="font-size: 25px;"></i></button>
+    <nav>
+      <a class="options" href="/categories">Categorias</a>
+      <a class="options" href="/products">Products</a>
+    </nav>
+  </aside>
+</div>
+<router-outlet />

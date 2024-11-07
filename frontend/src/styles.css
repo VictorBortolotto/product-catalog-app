@@ -1,0 +1,41 @@
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100vh;
+}
+
+.label {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.input {
+  display: flex;
+  padding: 2px 3px;
+  outline: none;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-radius: 5px;
+  border: solid black 1px;
+  height: 50px;
+}
+
+.save {
+  border: solid gray 1px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: rgb(161, 161, 238);
+  color: white;
+  height: 50px;
+}
+
+.save:hover {
+  background-color: rgb(170, 170, 236);
+}
+
+.description {
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  outline: none;
+}
